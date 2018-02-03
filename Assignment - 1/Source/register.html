@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>registration form</title>
+<link rel="stylesheet" href="styling.css">
+<style>
+.button1
+{	background-color: blue;
+	border-radius: 8px;
+	border: none;
+	color: white;
+	padding: 0px 15px;
+	text-align: center;
+	text-decoration: none;
+	font-size :32px;
+	margin: 5px;
+	cursor: pointer;
+	display: inline-block;
+	transition: all 0.5s;
+}
+
+.button1:hover
+{	background-color: white;
+	color: blue;
+	border-radius: 50%;
+	box-shadow: grey, grey;
+}
+.button2
+{	background-color: blue;
+	border-radius: 8px;
+	border: none;
+	color: white;
+	padding: 5px 30px;
+	text-align: center;
+	text-decoration: none;
+	font-size :32px;
+	margin: 5px;
+	cursor: pointer;
+	display: inline-block;
+	transition: all 0.5s;
+}
+
+.button2:hover
+{	background-color: white;
+	color: blue;
+	border-radius: 50%;
+	box-shadow: grey, grey;
+}
+input[type=text], select {
+    width: 10%;
+    padding: 12px 20px;
+    margin: 2px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=email], select
+{   width: 20%;
+    padding: 12px 20px;
+    margin: 2px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=password], select 
+{   width: 20%;
+    padding: 12px 20px;
+    margin: 2px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+</style>
+</head>
+<body>
+<center></br></br></br></br>
+
+<form id="demo">
+<h2>Please Select your options<br/>to register.</h2></br></br>
+<select id="deg">
+  <option value="null"><i>Select your degree</i></option>
+  <option value="Masters">Masters</option>
+  <option value="bachelors">Bachelors</option>
+ </select>
+<select id="sem">
+  <option value="null"><i>Select your Semester</i></option>
+  <option value="fall">Fall</option>
+  <option value="spring">Spring</option>
+  <option value="summer">Summer</option>
+ </select> 
+<select id="career">
+  <option value="null"><i>Select your career</i></option>
+  <option value="compsci">Computer Sciences</option>
+  <option value="dance">Dance</option>
+</select> 
+<br>
+<br>
+<button class="button1" value="submit" id="btn_click" type="hidden"></button></td>
+<button value="submit" class="button1" id="btn_click" onclick="onSubmit()">SUBMIT</button>
+</form>
+
+
+
+
+
+<form id="results">
+    <table>
+        <tr><td id ="one"></td><td id ="one2"></td></tr>
+    </table>
+
+</form>
+</center>
+</body>
+<script>
+
+        function onSubmit() {
+            var d = document.getElementById("deg");
+            var inputdeg = d.options[d.selectedIndex].text;
+        
+            var s = document.getElementById("sem");
+            var inputsem = s.options[s.selectedIndex].text;
+        
+            var c = document.getElementById("career");
+            var inputcar = c.options[c.selectedIndex].text;
+        
+            document.getElementById("demo").innerHTML = "Searching results for " + inputdeg + " students " +inputsem + " semester in " +inputcar+ " career" ;
+			
+
+            if(inputdeg == "Masters")
+			{
+                if(inputsem == "Fall")
+				{
+                    if(inputcar == "Dance")
+					{
+						window.location.href="C:\\Users\\harshasaranam\\Desktop\\aadarsh\\dance.html";
+                    }
+					else
+					{	
+						window.location.href="C:\\Users\\harshasaranam\\Desktop\\aadarsh\\cs.html";
+					}
+                }
+
+            }        
+        }
+        
+        
+    
+        </script>
+</html>
+
+
+
+
