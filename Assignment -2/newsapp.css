@@ -12,17 +12,25 @@ h2{
     padding:16px;
 }
 
-#container{
-    width: 100%;
-    text-align:center;
-    margin:auto;
-    display:inline-block;
+#container {
+    width: 1040px;
+    margin: 0px auto;
+    min-height: 750px;
+    text-align: left;
 }
 
-.search{
+input[type='text'] {
+    height: 2.2em;
+    font-size: 2em;
+    width: 80%;
+    padding: 5px;
+}
+
+#username{
     font-size:30px;
     color:black;
     border-radius:20px;
+    margin:auto;
 }
 
 #Registration{
@@ -49,3 +57,9 @@ button{
     text-align:center;
     margin-top:200px;
 }
+
+#profile{
+    font-family: "Trebuchet MS";
+    font-size: 15px;
+}
+

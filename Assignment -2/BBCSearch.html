@@ -4,10 +4,12 @@
   <title>BBC Search</title>
   <link rel="stylesheet" href="newsapp.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 
 <script>
-  var url = 'https://newsapi.org/v2/everything?q=PriyankaChopra&apiKey=f6966e661b284421ab01fb588508ce3e';
+
+  var name = "apple";
+  var url = 'https://newsapi.org/v2/everything?q='+name+'&apiKey=f6966e661b284421ab01fb588508ce3e';
 
 var req = new Request(url);
 
@@ -19,11 +21,18 @@ fetch(req)
 
       for(var i = 0; i < 10; i++) {
         var listItem = document.createElement('li');
+        listItem.innerHTML += '<br>';
+        listItem.innerHTML = "Article Title: '"+ json.articles[i].title+" ' ";
+        listItem.innerHTML += '<br>';
+        listItem.innerHTML += "Author:"+ json.articles[i].author;
+        listItem.innerHTML += '<br>';
+        listItem.innerHTML += json.articles[i].description;
+        listItem.innerHTML += '<br>';
+        listItem.innerHTML += "URL: <a href="+ json.articles[i].url+">"+json.articles[i].url+"</a>";
+        listItem.innerHTML += '<br>';
+        listItem.innerHTML += '<br>';
+        listItem.innerHTML += "<a href="+ json.articles[i].url+"> <img src="+json.articles[i].urlToImage+" height='100' width='100'></a>";
 
-        listItem.innerHTML = "Article Title "+ json.articles[i].title;
-        listItem.innerHTML += "Author"+ json.articles[i].author;
-        listItem.innerHTML += "URL"+ json.articles[i].url;
-        listItem.innerHTML += "image"+ json.articles[i].urlTomage;
         myList.appendChild(listItem);
       }
     });
@@ -38,12 +47,15 @@ fetch(req)
   <div class="search">
     <h1>Whats New?</h1>
     <input id="username" placeholder="Search.." type="text"> </input>
+    <hr>
   </div>
   <div id="profile">
     <ol>
 
     </ol>
   </div>
+  <hr>
+
 </div>
 
 </body>
