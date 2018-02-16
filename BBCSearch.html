@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BBC Search</title>
+  <link rel="stylesheet" href="newsapp.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script type="text/javascript" src="script.js"></script>
+
+<script>
+  var url = 'https://newsapi.org/v2/everything?q=PriyankaChopra&apiKey=f6966e661b284421ab01fb588508ce3e';
+
+var req = new Request(url);
+
+fetch(req)
+    .then(function(response) {
+      return response.json();})
+    .then(function(json){
+      var myList = document.querySelector('ol');
+
+      for(var i = 0; i < 10; i++) {
+        var listItem = document.createElement('li');
+
+        listItem.innerHTML = "Article Title "+ json.articles[i].title;
+        listItem.innerHTML += "Author"+ json.articles[i].author;
+        listItem.innerHTML += "URL"+ json.articles[i].url;
+        listItem.innerHTML += "image"+ json.articles[i].urlTomage;
+        myList.appendChild(listItem);
+      }
+    });
+
+
+
+  </script>
+</head>
+<body>
+
+<div id="container">
+  <div class="search">
+    <h1>Whats New?</h1>
+    <input id="username" placeholder="Search.." type="text"> </input>
+  </div>
+  <div id="profile">
+    <ol>
+
+    </ol>
+  </div>
+</div>
+
+</body>
+</html>

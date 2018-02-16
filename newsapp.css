@@ -1,0 +1,51 @@
+
+h1{
+    color:dimgray;
+    font-size:50px;
+    text-align: center;
+    margin-top:200px;
+    font-family:"Trebuchet MS"
+}
+
+h2{
+    color:dimgrey;
+    padding:16px;
+}
+
+#container{
+    width: 100%;
+    text-align:center;
+    margin:auto;
+    display:inline-block;
+}
+
+.search{
+    font-size:30px;
+    color:black;
+    border-radius:20px;
+}
+
+#Registration{
+    text-align:center;
+    margin:100px auto;
+}
+
+#buttons{
+    margin:20px auto;
+    padding:30px;
+    text-align:center;
+}
+
+button{
+    background-color: #4CAF50;
+    color:ghostwhite;
+    padding:10px;
+}
+
+#regsuccess{
+    background-color: lightgray;
+    font-family: "Trebuchet MS";
+    font-size:40px;
+    text-align:center;
+    margin-top:200px;
+}
